@@ -16,3 +16,7 @@ app.get('/getNames', (req, res) => {
     res.send(dogNames);
 })
 
+app.post('/newDog', (req, res) => {
+    dogNames.push(req.body);
+    res.sendStatus(201);
+});

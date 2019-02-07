@@ -12,7 +12,7 @@ function onNewDogSubmition() {
         url: '/newDog',
         method: 'POST',
         data: {
-            name: newDogName
+            name: $('#newDogName').val()
         }
     }).then(function() {
         dogNameList();
@@ -30,7 +30,7 @@ function dogNameList() {
 
 function updateDogList(dogs) {
     $('#listOfDogNames').empty();
-    dogs.forEach(function(dog) {
-        $('#listOfDogNames').append(`<li>${dog.name}</li>`);
-    })
-}
+    for (i = 0; i < dogs.length; i++) {
+        $('#listOfDogNames').append(`<li>${dogs[i].name}</li>`)
+    }
+};
