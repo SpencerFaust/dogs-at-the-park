@@ -29,6 +29,7 @@ function newGameOfFetch () {
             scoreOne: $('#firstDogFetched').val(),
             secondDog: $('#secondDog').val(),
             scoreTwo: $('#secondDogFetched').val(),
+            winner: ''
         }
     }).then(function() {
         getFetchTable();
@@ -69,22 +70,15 @@ function updateDogList(dogs) {
 function updateFetchTable(fetchTable) {
     $('#fetchTable').empty();
     $('.ballsFetchedInput').val('');
-    let winner = '';
     for (i = 0; i < fetchTable.length; i++) {
-        if (fetchTable[i].scoreOne > fetchTable[i].scoreTwo) {
-           winner = fetchTable[i].firstDog;
-        } else if (fetchTable[i].scoreOne < fetchTable[i].scoreTwo) {
-            winner = fetchTable[i].secondDog;
-        } else {
-            winner = 'Tie Game!';
-        }
+
         $('#fetchTable').append(`
         <tr>
             <td>${fetchTable[i].firstDog}</td>
             <td>${fetchTable[i].scoreOne}</td>
             <td>${fetchTable[i].secondDog}</td>
             <td>${fetchTable[i].scoreTwo}</td>
-            <td>${winner}</td>
+            <td>${fetchTable[i].winner}</td>
         <tr>`); 
         }   
     };

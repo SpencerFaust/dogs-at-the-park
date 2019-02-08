@@ -23,6 +23,14 @@ app.post('/newDog', (req, res) => {
 });
 
 app.post('/newGameOfFetch', (req, res) => {
+
+    if (req.body.scoreOne > req.body.scoreTwo) {
+        {req.body.winner = req.body.firstDog}
+    } else if (req.body.scoreOne < req.body.scoreTwo) {
+        {req.body.winner = req.body.secondDog}
+    } else {
+        {req.body.winner = 'Tie Game!'}
+    }
     fetchTable.push(req.body);
     res.sendStatus(201);
 });
