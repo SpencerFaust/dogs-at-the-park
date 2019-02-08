@@ -58,6 +58,8 @@ function getFetchTable() {
 function updateDogList(dogs) {
     $('#listOfDogNames').empty();
     $('.dogSelection').empty();
+    $('#newDogName').val('');
+    $('.dogSelection').append(`<option value="" disabled selected>Select Dog</option>`);
     for (i = 0; i < dogs.length; i++) {
         $('#listOfDogNames').append(`<li>${dogs[i].name}</li>`)
         $('.dogSelection').append(`<option value="${dogs[i].name}">${dogs[i].name}</option>`)
@@ -66,6 +68,7 @@ function updateDogList(dogs) {
 
 function updateFetchTable(fetchTable) {
     $('#fetchTable').empty();
+    $('.ballsFetchedInput').val('');
     let winner = '';
     for (i = 0; i < fetchTable.length; i++) {
         if (fetchTable[i].scoreOne > fetchTable[i].scoreTwo) {

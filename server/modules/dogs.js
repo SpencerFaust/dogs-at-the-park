@@ -1,6 +1,3 @@
-const dogNames = [
-    {name: 'Fido'},
-    {name: 'Dopey'}
-]
+const dogNames = [];
 
 module.exports = dogNames;
