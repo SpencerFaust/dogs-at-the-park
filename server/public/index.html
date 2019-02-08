@@ -6,13 +6,43 @@
     <title>Games of Fetch</title>
 </head>
 <body>
-    <h1>Dogs playing Fetch</h1>
     <div>
+        <h1>Dogs playing Fetch</h1>
         <input id="newDogName" placeholder="Dog's name" />
         <button id="newDogButton">Submit</button>
-    </div>
-    <ul id="listOfDogNames">
+   </div>
+   <div>
+        <ul id="listOfDogNames">
         <!-- Dogs get appended here -->
-    </ul>
+        </ul>
+    </div>
+    <div>
+        <h1>Who's Fetched More?</h1>
+        <p>First Dog:
+        <select class="dogSelection" id="firstDog">
+            <!-- Dog Name List goes here -->
+        </select><input placeholder="Balls Fetched" id="firstDogFetched" />
+        Second Dog:
+       <select class="dogSelection" id="secondDog">
+                        <!-- Dog Name List goes here -->
+        </select><input placeholder="Balls Fetched" id="secondDogFetched" /></p>
+        <button id="fetchButton">Submit</button>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Dog's Name</th>
+                    <th>Score</th>
+                    <th>Dog's Name</th>
+                    <th>Score</th>
+                    <th>Winner</th>
+                </tr>
+            </thead>
+            <tbody id="fetchTable">
+                <!-- Append fetch table here -->
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
